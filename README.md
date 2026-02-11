@@ -1,64 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡ PHANTOM NODE
 
-**Sniper Elite v23** — USD/JPY quant algo trader with a live command-center dashboard (prices, chart, economic calendar, trade history, algo status).
+**Autonomous USD/JPY Quant Trading System & Command Center**
 
-## Getting Started
+Phantom Node is a sophisticated algorithmic trading engine designed for the USD/JPY forex pair. It combines technical analysis, macro-economic data (FRED), and news sentiment (FMP) to execute high-probability trades with institutional-grade risk management.
 
-**Unified launch:** one command starts both the Next.js app and the USD/JPY algo trader:
+The system includes a real-time **Next.js Command Center** for monitoring performance, visualizing signals, and managing risk exposure.
 
-```bash
-npm run dev
-```
+---
 
-This runs the Next.js dev server and the Python algo (`python_algo/main.py`) via [concurrently](https://github.com/open-cli-tools/concurrently). Both must run together for the command center to work.
+## 🚀 Key Features
 
-- **Requirements:** Node 18+, Python 3.x, Docker.
-- **API Keys:** You need keys for [OANDA](https://www.oanda.com) (trading), [FMP](https://site.financialmodelingprep.com) (news), and [FRED](https://fred.stlouisfed.org) (macro data).
-- **Setup:** Copy `.env.example` to `.env.local` and fill in your keys.
-- **Optional:** run only the app or only the algo: `npm run dev:next` or `npm run dev:algo`.
+### 🧠 The Core Engine (Python)
+*   **Multi-Factor Confluence:** Signals are generated only when key technicals align (EMA trends, RSI regime, ADX strength).
+*   **Macro-Aware:** Integrates real-time US Treasury yields (10Y/2Y) and inflation data to determine directional bias.
+*   **News Sentiment Analysis:** Filters trades based on high-impact economic events and market sentiment via Financial Modeling Prep API.
+*   **Dynamic Risk Management:**
+    *   ATR-based Volatility Sizing.
+    *   Smart Trailing Stops & Break-even logic.
+    *   Daily Loss Circuit Breaker (halts trading if drawdowns hit a defined limit).
 
-Open [http://localhost:3000](http://localhost:3000) to use the command center. The **Algo Trader** strip shows live status (running/idle, last scan, last signal); the chart displays the latest signal and trade history from OANDA.
+### 🖥️ The Command Center (Next.js)
+*   **Live Strategy Dashboard:** Visualizes the exact decision-making process (Technicals + Macro + Sentiment).
+*   **Real-Time Charting:** Lightweight-charts integration with live trade markers, EMAs, and execution history.
+*   **Ops Center:** Manual overrides to Pause/Resume the algo or emergency close positions.
+*   **Social Sharing:** One-click generation of branded trade logs and performance charts for sharing.
 
-### Docker (run on its own system)
+---
 
-**You do not need a big system.** The stack is lightweight: Next.js + a small Python algo (pandas/numpy, ~800 candles, 60s loop). No database, no heavy compute.
+## ⚙️ How It Works
 
-| Resource | Minimum | Recommended |
-|----------|---------|-------------|
-| CPU | 1 vCPU | 1 vCPU |
-| RAM | 512 MB | 1 GB |
-| Disk | ~1 GB | ~2 GB |
+The system operates in a continuous loop (default: 60s cycle):
 
-A small VPS (e.g. 1 vCPU / 1 GB RAM) or a Raspberry Pi 4 is enough.
+1.  **Data Ingestion:** Fetches M15 candles from OANDA, Macro data from FRED, and News from FMP.
+2.  **Macro Analysis:** Determines the "Macro Regime" (e.g., *Yields Rising + Risk On = Bullish Bias*).
+3.  **Technical Scan:** Checks for setup validity (e.g., Price > EMA200, RSI not overbought, ADX > 20).
+4.  **Execution:** If Confluence Score > Threshold (default 4.0), a trade is executed via OANDA v20 API.
+5.  **Management:** Monitors every tick to adjust trailing stops or close positions based on time/price logic.
 
-**Build and run:**
+---
 
-```bash
-# With docker-compose (uses .env.local for OANDA keys)
-docker compose up -d --build
+## 🛠️ Setup & Installation
 
-# Or plain Docker
-docker build -t sniper-elite .
-docker run -p 3000:3000 --env-file .env.local sniper-elite
-```
+### Prerequisites
+*   [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed.
+*   **OANDA** Account (Live or Practice).
+*   **Financial Modeling Prep (FMP)** API Key (for news).
+*   **FRED** API Key (for macro data - free).
 
-Ensure `.env.local` is set up (see above) with all required API keys. The container runs both the Next app and the algo; the dashboard is at [http://localhost:3000](http://localhost:3000). The host only needs Docker—no Node or Python installed.
+### Quick Start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  **Clone the Repo**
+    ```bash
+    git clone https://github.com/buildwithzach/phantom-node.git
+    cd phantom-node
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2.  **Configure Environment**
+    Copy the example file and fill in your keys:
+    ```bash
+    cp .env.example .env.local
+    ```
+    *Edit `.env.local` and add your keys:*
+    ```env
+    NEXT_PUBLIC_OANDA_API_KEY=your_key
+    NEXT_PUBLIC_OANDA_ACCOUNT_ID=your_account_id
+    NEXT_PUBLIC_OANDA_ENVIRONMENT=practice  # or 'live'
+    NEXT_PUBLIC_FMP_API_KEY=your_fmp_key
+    NEXT_PUBLIC_FRED_API_KEY=your_fred_key
+    ```
 
-## Learn More
+3.  **Run with Docker**
+    This drives the entire stack (Dashboard + Algo):
+    ```bash
+    docker compose up -d
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+4.  **Access Dashboard**
+    Open [http://localhost:3000](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📊 Configuration
 
-## Deploy on Vercel
+You can fine-tune the strategy parameters in `python_algo/config.json` without touching the code.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*   `risk_per_trade`: % of equity per trade (default 0.01 = 1%).
+*   `max_daily_loss`: Hard dollar stop-loss for the day.
+*   `min_confluence_score`: How strict the entry requirements are.
+*   `trailing_stop_enabled`: Toggle smart management.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+_Note: Restart the container after changing config.json._
+
+---
+
+## ⚠️ Disclaimer
+
+**Trading forex involves substantial risk.** This software is for educational and research purposes only. The creators are not responsible for financial losses incurred by using this software. Always test thoroughly in a practice environment before deploying real capital.
