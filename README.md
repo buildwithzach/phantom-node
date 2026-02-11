@@ -39,6 +39,53 @@ The system operates in a continuous loop (default: 60s cycle):
 
 ---
 
+## 🦅 Strategy Specification (The Alpha)
+
+This is a specific breakdown of the Quant Logic engine (v10).
+
+### 1. Macro Regime (Directional Bias)
+Before any technical check, the algo determines the **Global Bias** using FRED data:
+
+| Indicator | Condition | Signal |
+| :--- | :--- | :--- |
+| **US10Y / US02Y** | Spread Widening (> 0.05 delta) | **Bullish USD** |
+| **US10Y / US02Y** | Spread Inverting | **Bearish USD** |
+| **Inflation Breakeven** | Rising (> 2.0%) | **Bullish USD** |
+| **Equity Sentiment** | VIX < 20 (Risk On) | **Bullish USD/JPY** |
+
+*   **Rule:** If Bias is `BEARISH`, the algo **REJECTS** all Long signals.
+*   **Rule:** If Bias is `BULLISH`, the algo **REJECTS** all Short signals.
+
+### 2. Technical Confluence (The Trigger)
+Once Bias is confirmed, the engine scans the **M15 Chart** for a setup. A trade requires a **Confluence Score ≥ 4.0**.
+
+| Factor | Condition (Long Example) | Points |
+| :--- | :--- | :--- |
+| **Trend** | Price > EMA 200 | +1.0 |
+| **Momentum** | EMA 9 > EMA 21 (Crossover) | +1.0 |
+| **Regime** | RSI (14) between 45 and 65 | +1.0 |
+| **Strength** | ADX > 20 (Trend Strength) | +1.0 |
+| **Volume** | Vol > 20-period MA | +0.5 |
+| **Structure** | Recent "Break of Structure" | +1.0 |
+
+### 3. News Filtering (The Shield)
+Using FMP API, the algo scans for **"High Impact"** events (NFP, CPI, FOMC) for both USD and JPY.
+*   **Pre-Event:** Trading HALTS 60 minutes before the event.
+*   **Post-Event:** Trading RESUMES 30 minutes after (once volatility settles).
+*   **Veto:** If a high-impact event is imminent, all Technical Signals are vetoed.
+
+### 4. Risk Engineering
+Institutional-grade risk management is hard-coded.
+
+*   **Position Sizing:** `Risk % (1%) / Stop Distance (ATR * 3.5)`
+    *   *Result:* Volatility-adjusted sizing. Large candles = Smaller position.
+*   **Stop Loss:** Placed at `ATR * 3.5` from Entry (Wide berth for noise).
+*   **Take Profit:** Fixed at `2.0R` (Risk/Reward 1:2).
+*   **Trailing Stop:** Activates when price hits `1.1R` profit. Locks in `Break-Even + 5 pips`.
+*   **Time Stop:** If trade is stagnant for **6 hours** with < 0.5R profit, it is auto-closed to free up capital.
+
+---
+
 ## 🛠️ Setup & Installation
 
 ### Prerequisites
