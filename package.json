@@ -3,24 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently -n next,algo -c blue,green \"next dev\" \"node scripts/start-algo.js\"",
+    "dev:next": "next dev",
+    "dev:algo": "node scripts/start-algo.js",
     "build": "next build",
     "start": "next start",
+    "start:all": "concurrently -n next,algo -c blue,green \"next dev\" \"node scripts/start-algo.js\"",
     "lint": "eslint"
   },
   "dependencies": {
+    "@types/ws": "^8.18.1",
+    "axios": "^1.13.3",
+    "dotenv": "^17.2.3",
+    "lightweight-charts": "^4.1.3",
     "next": "16.1.5",
+    "node-fetch": "^3.3.2",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "twitter-api-v2": "^1.29.0",
+    "ws": "^8.19.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.23",
+    "concurrently": "^9.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.5",
-    "tailwindcss": "^4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19",
     "typescript": "^5"
   }
 }

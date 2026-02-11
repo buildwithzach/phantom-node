@@ -1,0 +1,505 @@
+{
+  "initial_balance": 10000,
+  "final_balance": 10609.73518557598,
+  "total_return": 6.097351855759807,
+  "total_trades": 25,
+  "win_rate": 44.0,
+  "profit_factor": 3.5162900620207065,
+  "max_drawdown": 1.2858283718110697,
+  "sharpe_ratio": 5.586659692117737,
+  "trades": [
+    {
+      "entry_time": "2026-01-02 14:15:00",
+      "exit_time": "2026-01-02 17:00:00",
+      "action": "SELL",
+      "entry_price": 156.842,
+      "exit_price": 156.73313886553996,
+      "pnl": 22.86083823661187,
+      "balance": 10036.360838236611,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 2.75,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-05 06:45:00",
+      "exit_time": "2026-01-05 13:00:00",
+      "action": "SELL",
+      "entry_price": 157.034,
+      "exit_price": 156.77288371226643,
+      "pnl": 54.83442042404704,
+      "balance": 10105.23525866066,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 6.25,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-06 02:30:00",
+      "exit_time": "2026-01-06 14:45:00",
+      "action": "SELL",
+      "entry_price": 156.354,
+      "exit_price": 156.408,
+      "pnl": -16.199999999992087,
+      "balance": 10089.035258660668,
+      "exit_reason": "Time exit (12h)",
+      "duration_hours": 12.25,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-07 13:30:00",
+      "exit_time": "2026-01-07 15:00:00",
+      "action": "SELL",
+      "entry_price": 156.413,
+      "exit_price": 156.413,
+      "pnl": 0.0,
+      "balance": 10089.035258660668,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 1.5,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-09 00:00:00",
+      "exit_time": "2026-01-09 05:30:00",
+      "action": "BUY",
+      "entry_price": 156.953,
+      "exit_price": 157.31049778776395,
+      "pnl": 75.07453543042885,
+      "balance": 10177.159794091098,
+      "exit_reason": "Take profit hit",
+      "duration_hours": 5.5,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-09 13:30:00",
+      "exit_time": "2026-01-09 14:00:00",
+      "action": "SELL",
+      "entry_price": 157.408,
+      "exit_price": 157.408,
+      "pnl": 0.0,
+      "balance": 10177.159794091098,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 0.5,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-12 00:30:00",
+      "exit_time": "2026-01-12 02:15:00",
+      "action": "SELL",
+      "entry_price": 157.638,
+      "exit_price": 157.638,
+      "pnl": 0.0,
+      "balance": 10177.159794091098,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 1.75,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-12 07:15:00",
+      "exit_time": "2026-01-12 16:00:00",
+      "action": "SELL",
+      "entry_price": 157.857,
+      "exit_price": 157.857,
+      "pnl": 0.0,
+      "balance": 10177.159794091098,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 8.75,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-14 07:00:00",
+      "exit_time": "2026-01-14 10:30:00",
+      "action": "SELL",
+      "entry_price": 159.178,
+      "exit_price": 158.67269907444324,
+      "pnl": 106.11319436691815,
+      "balance": 10313.962988458017,
+      "exit_reason": "Take profit hit",
+      "duration_hours": 3.5,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-15 00:15:00",
+      "exit_time": "2026-01-15 01:00:00",
+      "action": "BUY",
+      "entry_price": 158.538,
+      "exit_price": 158.538,
+      "pnl": 0.0,
+      "balance": 10313.962988458017,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 0.75,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-15 02:30:00",
+      "exit_time": "2026-01-15 14:45:00",
+      "action": "BUY",
+      "entry_price": 158.541,
+      "exit_price": 158.742,
+      "pnl": 42.209999999998615,
+      "balance": 10376.962988458015,
+      "exit_reason": "Time exit (12h)",
+      "duration_hours": 12.25,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-15 16:00:00",
+      "exit_time": "2026-01-16 04:15:00",
+      "action": "SELL",
+      "entry_price": 158.517,
+      "exit_price": 158.196,
+      "pnl": 67.40999999999957,
+      "balance": 10463.542988458015,
+      "exit_reason": "Time exit (12h)",
+      "duration_hours": 12.25,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-16 21:45:00",
+      "exit_time": "2026-01-18 22:00:00",
+      "action": "SELL",
+      "entry_price": 158.103,
+      "exit_price": 157.928,
+      "pnl": 52.50000000000341,
+      "balance": 10516.042988458019,
+      "exit_reason": "Time exit (12h)",
+      "duration_hours": 48.25,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-19 15:30:00",
+      "exit_time": "2026-01-20 00:45:00",
+      "action": "BUY",
+      "entry_price": 158.027,
+      "exit_price": 158.10680946044076,
+      "pnl": 16.75998669256188,
+      "balance": 10549.092975150581,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 9.25,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-20 01:00:00",
+      "exit_time": "2026-01-20 01:15:00",
+      "action": "SELL",
+      "entry_price": 157.937,
+      "exit_price": 157.937,
+      "pnl": 0.0,
+      "balance": 10549.092975150581,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 0.25,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-20 06:00:00",
+      "exit_time": "2026-01-20 08:00:00",
+      "action": "BUY",
+      "entry_price": 158.18,
+      "exit_price": 158.342374766281,
+      "pnl": 34.09870091901098,
+      "balance": 10606.861676069591,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 2.0,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-20 08:45:00",
+      "exit_time": "2026-01-20 19:00:00",
+      "action": "SELL",
+      "entry_price": 157.818,
+      "exit_price": 157.818,
+      "pnl": 0.0,
+      "balance": 10606.861676069591,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 10.25,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-21 01:15:00",
+      "exit_time": "2026-01-21 05:15:00",
+      "action": "SELL",
+      "entry_price": 157.95,
+      "exit_price": 157.95,
+      "pnl": 0.0,
+      "balance": 10606.861676069591,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 4.0,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-21 07:30:00",
+      "exit_time": "2026-01-21 14:00:00",
+      "action": "SELL",
+      "entry_price": 157.971,
+      "exit_price": 157.971,
+      "pnl": 0.0,
+      "balance": 10622.611676069593,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 6.5,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-21 14:30:00",
+      "exit_time": "2026-01-22 00:45:00",
+      "action": "BUY",
+      "entry_price": 158.098,
+      "exit_price": 158.26867989816367,
+      "pnl": 35.8427786143676,
+      "balance": 10692.56445468396,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 10.25,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-22 01:15:00",
+      "exit_time": "2026-01-22 02:15:00",
+      "action": "SELL",
+      "entry_price": 158.25,
+      "exit_price": 158.25,
+      "pnl": 0.0,
+      "balance": 10692.56445468396,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 1.0,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-22 14:15:00",
+      "exit_time": "2026-01-22 23:45:00",
+      "action": "SELL",
+      "entry_price": 158.624,
+      "exit_price": 158.45632985289512,
+      "pnl": 35.21073089202304,
+      "balance": 10747.935185575981,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 9.5,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-23 07:30:00",
+      "exit_time": "2026-01-23 07:45:00",
+      "action": "SELL",
+      "entry_price": 157.524,
+      "exit_price": 157.524,
+      "pnl": 0.0,
+      "balance": 10747.935185575981,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 0.25,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-23 14:30:00",
+      "exit_time": "2026-01-23 16:15:00",
+      "action": "BUY",
+      "entry_price": 158.309,
+      "exit_price": 158.309,
+      "pnl": 0.0,
+      "balance": 10747.935185575981,
+      "exit_reason": "Stop loss hit",
+      "duration_hours": 1.75,
+      "strategy": "ma_crossover",
+      "strength": 0.8
+    },
+    {
+      "entry_time": "2026-01-23 20:45:00",
+      "exit_time": "2026-01-25 22:00:00",
+      "action": "BUY",
+      "entry_price": 155.819,
+      "exit_price": 155.128,
+      "pnl": -138.2000000000005,
+      "balance": 10609.73518557598,
+      "exit_reason": "Time exit (4h)",
+      "duration_hours": 49.25,
+      "strategy": "rsi_mean_reversion",
+      "strength": 0.7
+    }
+  ],
+  "equity_curve": [
+    {
+      "time": "2025-12-31 03:00:00",
+      "balance": 10000
+    },
+    {
+      "time": "2026-01-02 15:30:00",
+      "balance": 10013.5
+    },
+    {
+      "time": "2026-01-02 17:00:00",
+      "balance": 10036.360838236611
+    },
+    {
+      "time": "2026-01-05 08:30:00",
+      "balance": 10050.400838236612
+    },
+    {
+      "time": "2026-01-05 13:00:00",
+      "balance": 10105.23525866066
+    },
+    {
+      "time": "2026-01-06 14:45:00",
+      "balance": 10089.035258660668
+    },
+    {
+      "time": "2026-01-07 15:00:00",
+      "balance": 10089.035258660668
+    },
+    {
+      "time": "2026-01-09 01:30:00",
+      "balance": 10102.085258660669
+    },
+    {
+      "time": "2026-01-09 05:30:00",
+      "balance": 10177.159794091098
+    },
+    {
+      "time": "2026-01-09 14:00:00",
+      "balance": 10177.159794091098
+    },
+    {
+      "time": "2026-01-12 02:15:00",
+      "balance": 10177.159794091098
+    },
+    {
+      "time": "2026-01-12 16:00:00",
+      "balance": 10177.159794091098
+    },
+    {
+      "time": "2026-01-14 09:00:00",
+      "balance": 10207.849794091098
+    },
+    {
+      "time": "2026-01-14 10:30:00",
+      "balance": 10313.962988458017
+    },
+    {
+      "time": "2026-01-15 01:00:00",
+      "balance": 10313.962988458017
+    },
+    {
+      "time": "2026-01-15 14:00:00",
+      "balance": 10334.752988458016
+    },
+    {
+      "time": "2026-01-15 14:45:00",
+      "balance": 10376.962988458015
+    },
+    {
+      "time": "2026-01-16 02:45:00",
+      "balance": 10396.132988458015
+    },
+    {
+      "time": "2026-01-16 04:15:00",
+      "balance": 10463.542988458015
+    },
+    {
+      "time": "2026-01-18 22:00:00",
+      "balance": 10516.042988458019
+    },
+    {
+      "time": "2026-01-19 23:30:00",
+      "balance": 10532.33298845802
+    },
+    {
+      "time": "2026-01-20 00:45:00",
+      "balance": 10549.092975150581
+    },
+    {
+      "time": "2026-01-20 01:15:00",
+      "balance": 10549.092975150581
+    },
+    {
+      "time": "2026-01-20 06:30:00",
+      "balance": 10572.762975150581
+    },
+    {
+      "time": "2026-01-20 08:00:00",
+      "balance": 10606.861676069591
+    },
+    {
+      "time": "2026-01-20 19:00:00",
+      "balance": 10606.861676069591
+    },
+    {
+      "time": "2026-01-21 05:15:00",
+      "balance": 10606.861676069591
+    },
+    {
+      "time": "2026-01-21 12:45:00",
+      "balance": 10622.611676069593
+    },
+    {
+      "time": "2026-01-21 14:00:00",
+      "balance": 10622.611676069593
+    },
+    {
+      "time": "2026-01-21 19:30:00",
+      "balance": 10656.721676069592
+    },
+    {
+      "time": "2026-01-22 00:45:00",
+      "balance": 10692.56445468396
+    },
+    {
+      "time": "2026-01-22 02:15:00",
+      "balance": 10692.56445468396
+    },
+    {
+      "time": "2026-01-22 15:30:00",
+      "balance": 10712.72445468396
+    },
+    {
+      "time": "2026-01-22 23:45:00",
+      "balance": 10747.935185575981
+    },
+    {
+      "time": "2026-01-23 07:45:00",
+      "balance": 10747.935185575981
+    },
+    {
+      "time": "2026-01-23 16:15:00",
+      "balance": 10747.935185575981
+    },
+    {
+      "time": "2026-01-25 22:00:00",
+      "balance": 10609.73518557598
+    }
+  ],
+  "winning_trades": 11,
+  "losing_trades": 14,
+  "avg_win": 49.35592596145191,
+  "avg_loss": -11.0285714285709,
+  "strategy_performance": {
+    "ma_crossover": {
+      "trades": 24,
+      "wins": 11,
+      "losses": 13,
+      "total_pnl": 526.7151855759789
+    },
+    "rsi_mean_reversion": {
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "total_pnl": -138.2000000000005
+    }
+  }
+}

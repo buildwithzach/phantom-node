@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-29T10:43:45.527750",
+  "initial_balance": 10000,
+  "strategies_tested": [
+    "ml_pattern_rec",
+    "Enhanced Engine"
+  ],
+  "summary_metrics": {
+    "ml_pattern_rec": {
+      "total_trades": 0,
+      "win_rate": 0,
+      "total_return": 0,
+      "sharpe_ratio": 0,
+      "max_drawdown": 0
+    },
+    "Enhanced Engine": {
+      "total_trades": 75,
+      "win_rate": 64.0,
+      "total_return": 17.77836089212571,
+      "sharpe_ratio": 0.414416530652115,
+      "max_drawdown": 4.478343557203079
+    }
+  }
+}

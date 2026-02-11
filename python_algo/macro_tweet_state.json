@@ -1,0 +1,12 @@
+{
+  "bias": "BEARISH",
+  "confidence": "HIGH",
+  "yield_signal": "bearish",
+  "risk_signal": "bearish",
+  "boj_volatility": false,
+  "key_factors": [
+    "Yields: Bearish",
+    "Risk: Bearish"
+  ],
+  "last_tweet_time": "2026-01-30T18:41:59.155953"
+}

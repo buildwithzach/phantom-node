@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+.git
+.gitignore
+# .env* (removed to allow build-time var inlining)
+.algo-status.json
+*.md
+!README.md
+.DS_Store
+coverage
+.vercel
+*.tsbuildinfo
+next-env.d.ts
